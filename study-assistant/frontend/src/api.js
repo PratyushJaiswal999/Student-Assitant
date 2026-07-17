@@ -3,7 +3,7 @@
  * Supports AbortController so stale requests can be cancelled.
  */
 
-const API_BASE = import.meta.env.VITE_API_URL || 'http://localhost:3001';
+const API_BASE = import.meta.env.VITE_API_URL || (import.meta.env.DEV ? 'http://localhost:3001' : '');
 
 /**
  * @param {string} text      - user notes/topic
