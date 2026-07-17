@@ -1,6 +1,6 @@
-const Groq = require('groq-sdk');
+import Groq from 'groq-sdk';
 
-// Initialize Groq (api key comes from Vercel env variable)
+// Initialize Groq
 const groq = new Groq({ apiKey: process.env.GROQ_API_KEY });
 
 // ── Prompt Builder ─────────────────────────────────────────
@@ -82,8 +82,8 @@ function validateResponse(parsed, mode) {
   return { ok: true, data: parsed };
 }
 
-// ── Serverless Handler ──────────────────────────────────────
-module.exports = async (req, res) => {
+// ── ES Module Serverless Handler ───────────────────────────
+export default async function handler(req, res) {
   // CORS Headers for API accessibility
   res.setHeader('Access-Control-Allow-Credentials', true);
   res.setHeader('Access-Control-Allow-Origin', '*');
@@ -144,4 +144,4 @@ module.exports = async (req, res) => {
   }
 
   return res.json(result.data);
-};
+}
