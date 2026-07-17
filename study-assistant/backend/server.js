@@ -1,6 +1,7 @@
 require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
+const rateLimit = require('express-rate-limit');
 const Groq = require('groq-sdk');
 const { buildPrompt } = require('./prompt');
 const { validateResponse } = require('./validateResponse');
@@ -10,6 +11,18 @@ const PORT = process.env.PORT || 3001;
 
 app.use(cors());
 app.use(express.json());
+
+// Rate limit: 15 requests per 15 minutes per IP
+const generateLimiter = rateLimit({
+  windowMs: 15 * 60 * 1000, // 15 minutes
+  max: 15,
+  message: {
+    error: 'rate_limited',
+    message: 'Too many requests. Please try again in 15 minutes.'
+  },
+  standardHeaders: true,
+  legacyHeaders: false,
+});
 
 const groq = new Groq({ apiKey: process.env.GROQ_API_KEY });
 
@@ -21,7 +34,7 @@ app.get('/health', (_req, res) => res.json({ status: 'ok' }));
  * Body: { text: string, mode: 'flashcards' | 'quiz' }
  * Returns: validated flashcards or quiz JSON, or { error: 'bad_json' | 'bad_shape' | 'empty' | 'provider_error' }
  */
-app.post('/api/generate', async (req, res) => {
+app.post('/api/generate', generateLimiter, async (req, res) => {
   const { text, mode } = req.body;
 
   // Basic input validation

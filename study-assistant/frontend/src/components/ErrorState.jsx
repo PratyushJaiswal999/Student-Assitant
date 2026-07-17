@@ -27,6 +27,10 @@ const MESSAGES = {
     title: 'Add some text first.',
     detail: 'Paste your notes or a topic above before generating.',
   },
+  rate_limited: {
+    title: 'Too many requests.',
+    detail: 'You have reached the generation limit. Please wait 15 minutes and try again.',
+  },
 };
 
 export default function ErrorState({ code, onRetry }) {
