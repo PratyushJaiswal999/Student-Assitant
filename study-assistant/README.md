@@ -2,9 +2,11 @@
 
 An AI-powered study tool that converts your notes or any topic into **flashcards** or a **quiz** in seconds.
 
-## Demo
+---
 
-🎬 [Watch the demo video](https://drive.google.com/file/d/1LRUMIRnKCOmRpycNfmNgep3TjMDbK_cw/view?usp=sharing)
+### 🌐 [Live Project →](https://student-assitant-sigma.vercel.app/)　　🎬 [Watch Demo Video →](https://drive.google.com/file/d/1LRUMIRnKCOmRpycNfmNgep3TjMDbK_cw/view?usp=sharing)
+
+---
 
 ## Features
 
