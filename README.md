@@ -2,7 +2,8 @@
 
 An AI-powered interactive study application that converts free-form text notes or topics into fully structured **flashcards** or **quizzes** in seconds.
 
-[![Live Demo](https://img.shields.io/badge/Live_Demo-Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://student-assitant-sigma.vercel.app/)
+[![Live Demo](https://img.shields.io/badge/Live_Demo-Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://student-assitant-pratyush-jaiswals-projects.vercel.app/)
+
 [![Demo Video](https://img.shields.io/badge/Demo_Video-Google_Drive-34A853?style=for-the-badge&logo=google-drive&logoColor=white)](https://drive.google.com/file/d/1LRUMIRnKCOmRpycNfmNgep3TjMDbK_cw/view?usp=sharing)
 
 ## ⏱️ Time Spent
