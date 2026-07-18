@@ -16,3 +16,11 @@ build/
 # OS
 .DS_Store
 Thumbs.db
+
+# Planning & local files
+PLAN.md
+PROGRESS.md
+UI_ENHANCEMENTS.md
+*.jpg
+*.png
+Frontend_Internship_Assignment- Flam (2).md
